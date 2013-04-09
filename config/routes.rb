@@ -1,4 +1,13 @@
 TaskManager::Application.routes.draw do
+  resources :story_comments
+
+
+  resources :stories
+
+
+  resources :users
+
+
   #get "home/index" - original
   root :to => 'home#index'
 

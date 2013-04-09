@@ -1,0 +1,20 @@
+= form_for @story_comment, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :content, :class => 'control-label'
+    .controls
+      = f.text_area :content, :class => 'text_area'
+  .control-group
+    = f.label :user_id, :class => 'control-label'
+    .controls
+      = f.number_field :user_id, :class => 'number_field'
+  .control-group
+    = f.label :story_id, :class => 'control-label'
+    .controls
+      = f.number_field :story_id, :class => 'number_field'
+  .control-group
+    = f.label :state, :class => 'control-label'
+    .controls
+      = f.text_field :state, :class => 'text_field'
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), story_comments_path, :class => 'btn'
