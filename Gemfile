@@ -9,7 +9,9 @@ gem 'rails', '3.2.13'
 gem 'pg'
 #HAML
 gem 'haml-rails'
-
+#State-machine
+gem 'state_machine'
+gem 'ruby-graphviz', :require => 'graphviz'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,9 +23,11 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  
   gem 'therubyracer'
   gem 'less-rails'
   gem 'twitter-bootstrap-rails'
+
 end
 
 gem 'jquery-rails'
