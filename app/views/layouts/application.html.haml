@@ -28,9 +28,13 @@
           %a.brand(href="../home/index") TaskManager
           .container.nav-collapse
             %ul.nav
-              %li= link_to "Users", "/users"
-              %li= link_to "Stories", "/stories"
-              %li= link_to "Story_Comments", "/story_comments"
+              %li= link_to "Users", users_path
+              %li= link_to "Story", stories_path
+              %li= link_to "Story Comments", story_comments_path
+            %form.navbar-form.pull-right
+              %input.span2(type="text" placeholder="Email")
+              %input.span2(type="password" placeholder="password")
+              %button.btn(type="submit") Sign in
 
     .container
 
@@ -43,12 +47,12 @@
             %h3 Menu
             %ul.nav.nav-list
               %li.nav-header Menu
-              %li= link_to "Users", "/users"
-              %li= link_to "Story", "/stories"
-              %li= link_to "Story Comments", "/story_comments"
+              %li= link_to "Users", users_path
+              %li= link_to "Story", stories_path
+              %li= link_to "Story Comments", story_comments_path
     
       %footer
-        %p &copy; BestTaskManager Company 2013
+        %p &copy; BestTaskManager 2013
     /
       Javascripts
       \==================================================
