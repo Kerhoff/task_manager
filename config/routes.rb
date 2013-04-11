@@ -10,6 +10,8 @@ TaskManager::Application.routes.draw do
   resources :users
   
   get "home/index"
+  
+  get "home/about"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
