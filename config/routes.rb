@@ -1,8 +1,6 @@
 TaskManager::Application.routes.draw do
   root :to => 'home#index'
   
-  get "home/index"
-
   resources :secret
 
   resources :story_comments
@@ -10,6 +8,8 @@ TaskManager::Application.routes.draw do
   resources :stories
 
   resources :users
+  
+  get "home/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
