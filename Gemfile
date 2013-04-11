@@ -31,8 +31,12 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '2.11.0'
+  #RSpec
+  gem 'rspec-rails'
   gem 'guard-rspec'
+  #Spork
+  gem 'guard-spork'
+  gem 'spork', '1.0.0rc3'
 end
 
 group :test do
