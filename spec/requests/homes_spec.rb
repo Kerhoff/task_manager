@@ -15,9 +15,9 @@ describe "Home page" do
   end
   
   describe "about page" do
-    it "shuold  have  the content 'About Simple Task Manager'" do
+    it "shuold  have  the content 'About'" do
       visit '/home/about'
-      page.should have_selector('h1', :text => 'About Simple Task Manager')
+      page.should have_selector('h1', :text => 'About')
     end
     
     it "shuold  have  the title 'Task Manager | About'" do
