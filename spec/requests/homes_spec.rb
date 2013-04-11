@@ -10,7 +10,7 @@ describe "Home page" do
     
     it "shuold  have  the title 'Task Manager | Home'" do
       visit '/home/index'
-      page.should have_selector('title', :text => 'Task Manager | Home')
+      page.should have_selector('title', :text => ' | Home')
     end
   end
   
