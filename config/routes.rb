@@ -1,4 +1,7 @@
 TaskManager::Application.routes.draw do
+  #get "secret/index"
+  resources :secret
+
   resources :story_comments
 
 
