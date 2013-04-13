@@ -1,6 +1,11 @@
 TaskManager::Application.routes.draw do
   root :to => 'home#index'
   
+  match '/contacts', to: 'home#contacts'
+  match '/about',    to: 'home#about'
+  match '/help',     to: "home#help"
+
+  
   resources :secret
 
   resources :story_comments
@@ -9,10 +14,7 @@ TaskManager::Application.routes.draw do
 
   resources :users
   
-  get "home/index"
   
-  get "home/about"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
