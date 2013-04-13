@@ -19,6 +19,10 @@ gem 'ruby-graphviz', :require => 'graphviz'
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass'
+
+#Password hash
+gem 'bcrypt-ruby'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -37,6 +41,10 @@ group :development, :test do
   #Spork
   gem 'guard-spork'
   gem 'spork', '1.0.0rc3'
+end
+
+group :development do
+  gem 'annotate'
 end
 
 group :test do
