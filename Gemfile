@@ -21,8 +21,9 @@ gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-sass'
 
-#Password hash
+#Hash password
 gem 'bcrypt-ruby'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
