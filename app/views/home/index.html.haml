@@ -1,7 +1,5 @@
-= provide(:title, 'Home')
 .hero-unit
   %h1 Simple Task Manager
   %p.lead
     Sign up for to use Simple Task Manager
-  %a.btn.btn-large.btn-success(href="#")
-    Sign up
+  =link_to "Sign Up", sign_up_path, class: 'btn btn-large btn-success'

@@ -25,14 +25,13 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand(href= "/") TaskManager
+          =link_to "TaskManager", root_path, class: "brand"
           .container.nav-collapse
             %ul.nav
               %li= link_to "Users", users_path
               %li= link_to "Story", stories_path
               %li= link_to "Story Comments", story_comments_path
-              %li
-                %a(href='/home/about') About
+              %li= link_to "About", about_path
             %form.navbar-form.pull-right
               %input.span2(type="text" placeholder="Email")
               %input.span2(type="password" placeholder="Password")

@@ -1,9 +1,14 @@
 TaskManager::Application.routes.draw do
+  
+  #Home controller
   root :to => 'home#index'
   
   match '/contacts', to: 'home#contacts'
   match '/about',    to: 'home#about'
   match '/help',     to: "home#help"
+  
+  #Users controller
+  match '/sign_up', to: 'users#new'
 
   
   resources :secret
