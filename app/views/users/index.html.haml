@@ -8,6 +8,7 @@
       %th= model_class.human_attribute_name(:name)
       %th= model_class.human_attribute_name(:email)
       %th= model_class.human_attribute_name(:state)
+      %th= model_class.human_attribute_name(:password_digest)
       %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
@@ -17,6 +18,7 @@
         %td= user.name
         %td= user.email
         %td= user.state
+        %td= user.password_digest
         %td=l user.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_user_path(user), :class => 'btn btn-mini'

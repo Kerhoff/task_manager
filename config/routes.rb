@@ -1,24 +1,21 @@
 TaskManager::Application.routes.draw do
+  resources :users
   
-  #Home controller
   root :to => 'home#index'
-  
-  match '/contacts', to: 'home#contacts'
-  match '/about',    to: 'home#about'
-  match '/help',     to: "home#help"
   
   #Users controller
   match '/sign_up', to: 'users#new'
-
+  
+  #Home controller
+  match '/contacts', to: 'home#contacts'
+  match '/about',    to: 'home#about'
+  match '/help',     to: "home#help"
   
   resources :secret
 
   resources :story_comments
 
-  resources :stories
-
-  resources :users
-  
+  resources :stories  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

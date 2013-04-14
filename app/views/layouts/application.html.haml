@@ -51,6 +51,13 @@
               %li= link_to "Users", users_path
               %li= link_to "Story", stories_path
               %li= link_to "Story Comments", story_comments_path
+          .well.sidebar-nav
+            %h3 Menu
+            %ul.nav.nav-list
+              %li.nav-header Menu
+              %li= link_to "Users", users_path
+              %li= link_to "Story", stories_path
+              %li= link_to "Story Comments", story_comments_path
     
       %footer
         .container
@@ -59,6 +66,7 @@
             = link_to "About", about_path
             = link_to "Contact", contacts_path
             = link_to "Help", help_path
+          =debug(params) if Rails.env.development?
     /
       Javascripts
       \==================================================
