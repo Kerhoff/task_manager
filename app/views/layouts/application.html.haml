@@ -18,7 +18,7 @@
 
 
   %body
-    .navbar.navbar-fixed-top.navbar-inverse
+    .navbar.navbar-fixed-top
       .navbar-inner
         .container
           %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
@@ -27,16 +27,24 @@
             %span.icon-bar
           =link_to "TaskManager", root_path, class: "brand"
           .container.nav-collapse
-            %ul.nav
+            %ul.nav.pull-right
               %li= link_to "Users", users_path
               %li= link_to "Story", stories_path
               %li= link_to "Story Comments", story_comments_path
-              %li= link_to "About", about_path
-            %form.navbar-form.pull-right
-              %input.span2(type="text" placeholder="Email")
-              %input.span2(type="password" placeholder="Password")
-              %button.btn(type="submit") Sign in
-
+              -if signed_in?
+                %li= link_to "Users", "#"
+                %li.dropdown#fat-menu
+                  %a(class="dropdown-toogle" data-toggle="dropdown" href="#")
+                    Account
+                    %b.caret
+                  %ul.dropdown-menu
+                    %li= link_to "Profile", current_user
+                    %li= link_to "Settings", '#'
+                    %li.divider
+                    %li= link_to "Sign out", sign_out_path, method: "delete"
+              -else
+                %li= link_to "Sign in", sign_in_path
+              
     .container
 
       .row
@@ -66,7 +74,7 @@
             = link_to "About", about_path
             = link_to "Contact", contacts_path
             = link_to "Help", help_path
-          =debug(params) if Rails.env.development?
+          = debug(params) if Rails.env.development?
     /
       Javascripts
       \==================================================

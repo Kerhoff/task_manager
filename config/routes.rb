@@ -1,7 +1,12 @@
 TaskManager::Application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   
   root :to => 'home#index'
+  
+  #Sessions controller
+  match '/sign_in',  to:  'sessions#new'
+  match '/sign_out', to:  'sessions#destroy', via: :delete
   
   #Users controller
   match '/sign_up', to: 'users#new'
