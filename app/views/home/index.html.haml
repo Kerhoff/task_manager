@@ -1,5 +1,9 @@
 .hero-unit
-  %h1 Simple Task Manager
-  %p.lead
-    Sign up for to use Simple Task Manager
-  =link_to "Sign Up", sign_up_path, class: 'btn btn-large btn-success'
+  -if signed_in?
+    %h1 Welocme to Task Manager
+  - else
+    %h1 Simple Task Manager
+    %p.lead
+      Sign up for to use Simple Task Manager
+    =link_to "Sign Up", sign_up_path, class: 'btn btn-large btn-success'
+    =link_to "Sign In", sign_in_path, class: 'btn btn-large btn-primary'

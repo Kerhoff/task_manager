@@ -17,5 +17,9 @@
     .controls
       = f.password_field :password_confirmation, :class => 'password_field'
   .form-actions
-    = f.submit "Sign Up!", :class => 'btn btn-large btn-primary'
-    = link_to t('.cancel', :default => t("helpers.links.cancel")), users_path, :class => 'btn'
+    - if signed_in?
+      = f.submit "Save changes", :class => 'btn btn-large btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), users_path, :class => 'btn'
+    -else
+      = f.submit "Sign Up!", :class => 'btn btn-large btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), users_path, :class => 'btn'

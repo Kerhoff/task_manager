@@ -18,7 +18,7 @@
 
 
   %body
-    .navbar.navbar-fixed-top
+    .navbar.navbar-fixed-top.navbar-inverse
       .navbar-inner
         .container
           %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
@@ -28,18 +28,17 @@
           =link_to "TaskManager", root_path, class: "brand"
           .container.nav-collapse
             %ul.nav.pull-right
-              %li= link_to "Users", users_path
-              %li= link_to "Story", stories_path
-              %li= link_to "Story Comments", story_comments_path
               -if signed_in?
-                %li= link_to "Users", "#"
+                %li= link_to "Users", users_path
+                %li= link_to "Stories", stories_path
+                %li= link_to "Story Comments", story_comments_path
                 %li.dropdown#fat-menu
                   %a(class="dropdown-toogle" data-toggle="dropdown" href="#")
                     Account
                     %b.caret
                   %ul.dropdown-menu
                     %li= link_to "Profile", current_user
-                    %li= link_to "Settings", '#'
+                    %li= link_to "Settings", edit_user_path(current_user)
                     %li.divider
                     %li= link_to "Sign out", sign_out_path, method: "delete"
               -else
@@ -56,16 +55,15 @@
             %h3 Menu
             %ul.nav.nav-list
               %li.nav-header Menu
-              %li= link_to "Users", users_path
-              %li= link_to "Story", stories_path
-              %li= link_to "Story Comments", story_comments_path
-          .well.sidebar-nav
-            %h3 Menu
-            %ul.nav.nav-list
-              %li.nav-header Menu
-              %li= link_to "Users", users_path
-              %li= link_to "Story", stories_path
-              %li= link_to "Story Comments", story_comments_path
+              -if signed_in?
+                %li= link_to "Users", users_path
+                %li= link_to "Story", stories_path
+                %li= link_to "Story Comments", story_comments_path
+              -else
+                %li= link_to "About", about_path
+                %li= link_to "Contact", contacts_path
+                %li= link_to "Help", help_path
+          
     
       %footer
         .container

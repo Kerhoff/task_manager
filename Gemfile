@@ -24,6 +24,11 @@ gem 'bootstrap-sass'
 #Hash password
 gem 'bcrypt-ruby'
 
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
+gem 'faker'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
