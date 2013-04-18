@@ -29,8 +29,9 @@
           .container.nav-collapse
             %ul.nav.pull-right
               -if signed_in?
-                %li= link_to "Users", users_path
+                %li= link_to "Home", root_path
                 %li= link_to "Stories", stories_path
+                %li= link_to "Users", users_path
                 %li= link_to "Story Comments", story_comments_path
                 %li.dropdown#fat-menu
                   %a(class="dropdown-toogle" data-toggle="dropdown" href="#")
@@ -42,6 +43,7 @@
                     %li.divider
                     %li= link_to "Sign out", sign_out_path, method: "delete"
               -else
+                %li= link_to "Home", root_path
                 %li= link_to "Sign in", sign_in_path
               
     .container

@@ -1,7 +1,9 @@
-- provide(:title, 'All users')
+- provide(:title, 'Users')
 - model_class = User
 %h1
-  All users
+  All users (
+  = @users.count
+  )
 = will_paginate
 %table.table.table-striped
   %thead

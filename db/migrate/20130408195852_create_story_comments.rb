@@ -5,8 +5,7 @@ class CreateStoryComments < ActiveRecord::Migration
       t.integer :user_id
       t.integer :story_id
       t.string :state
-      t.datetime :created_at
-
+      
       t.timestamps
     end
   end

@@ -10,11 +10,14 @@
 #  updated_at      :datetime         not null
 #  password_digest :string(255)
 #  remember_token  :string(255)
+#  admin           :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :state, :password, :password_confirmation
   has_secure_password
+  has_many :story_comments, dependent: :destroy
+  has_many :stories
   
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token

@@ -12,5 +12,14 @@
 #
 
 class Story < ActiveRecord::Base
-  attr_accessible :content, :created_at, :name, :state, :updated_at, :user_id
+  attr_accessible :content, :name, :state, :user_id
+  has_many :story_comments, dependent: :destroy
+  belongs_to :user
+  
+  
+  validates :name, presence: true, length: { maximum: 50 }
+  validates :content, presence: true
+  validates :user_id, presence: true
+  
+  default_scope order: 'stories.created_at DESC'
 end

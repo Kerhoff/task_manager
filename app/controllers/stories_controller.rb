@@ -2,7 +2,7 @@ class StoriesController < ApplicationController
   # GET /stories
   # GET /stories.json
   def index
-    @stories = Story.all
+    @stories = Story.paginate(page: params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +14,7 @@ class StoriesController < ApplicationController
   # GET /stories/1.json
   def show
     @story = Story.find(params[:id])
+    @story_comments = @story.story_comments.paginate(page: params[:page])
 
     respond_to do |format|
       format.html # show.html.erb

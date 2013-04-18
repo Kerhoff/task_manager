@@ -1,9 +1,38 @@
-.hero-unit
-  -if signed_in?
-    %h1 Welocme to Task Manager
-  - else
+-if signed_in?
+  %h1 Welcome to Task Manager
+  %hr
+  %h3
+    Stories (
+    =@stories.count 
+    )
+  =will_paginate @stories
+  
+  - model_class = Story
+  %table.table.table-striped
+    %thead
+      %tr
+        /%th= model_class.human_attribute_name(:id)
+        %th= model_class.human_attribute_name(:name)
+        /%th= model_class.human_attribute_name(:content)
+        %th= model_class.human_attribute_name(:user_id)
+        %th= model_class.human_attribute_name(:state)
+        /%th= model_class.human_attribute_name(:created_at)
+        %th= model_class.human_attribute_name(:updated_at)
+    %tbody
+      - @stories.each do |story|
+        %tr
+          /%td= link_to story.id, story_path(story)
+          %td= link_to story.name, story_path(story)
+          /%td= story.content
+          %td= story.user_id
+          %td= story.state
+          /%td=l story.created_at
+          %td=l story.updated_at
+
+  =will_paginate @stories
+- else
+  .hero-unit
     %h1 Simple Task Manager
     %p.lead
       Sign up for to use Simple Task Manager
     =link_to "Sign Up", sign_up_path, class: 'btn btn-large btn-success'
-    =link_to "Sign In", sign_in_path, class: 'btn btn-large btn-primary'
